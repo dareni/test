@@ -7,6 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>itemdirectory.webapplication</artifactId>
+    <packaging>war</packaging>
     <properties>
         <environment.type>TEST</environment.type>
     </properties>
@@ -96,7 +97,7 @@
     </dependencies>
 
     <build>
-        <finalName>Wap-${environment.type}</finalName>
+        <!--finalName>Wap-${environment.type}</finalName-->
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -117,7 +118,7 @@
                 	<scanIntervalSeconds>10</scanIntervalSeconds>
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>9090</port>
+							<port>8088</port>
 						</connector>
 					</connectors>
 					<webAppConfig>
