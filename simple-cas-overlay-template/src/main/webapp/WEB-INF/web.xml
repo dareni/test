@@ -138,7 +138,7 @@
     <servlet-name>cas</servlet-name>
       <url-pattern>/samlValidate</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/proxy</url-pattern>
@@ -153,7 +153,7 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/p3/proxyValidate</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/CentralAuthenticationService</url-pattern>

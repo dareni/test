@@ -30,31 +30,31 @@
     Controls the generation of the unique identifiers for tickets.  You most likely do not need to modify these.  Though you may need to add
     the SAML ticket id generator.
     </description>
-       
-	<!-- ID Generators -->
-	<bean id="ticketGrantingTicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
+
+    <!-- ID Generators -->
+    <bean id="ticketGrantingTicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
         c:maxLength="50" c:suffix="${host.name}" />
 
-	<bean id="serviceTicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
+    <bean id="serviceTicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
         c:maxLength="20" c:suffix="${host.name}" />
 
     <bean id="loginTicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
         c:maxLength="30" c:suffix="${host.name}" />
-    	
+
     <bean id="proxy20TicketUniqueIdGenerator" class="org.jasig.cas.util.DefaultUniqueTicketIdGenerator"
         c:maxLength="20" c:suffix="${host.name}" />
-	 
+
     <bean id="samlServiceTicketUniqueIdGenerator" class="org.jasig.cas.support.saml.util.SamlCompliantUniqueTicketIdGenerator">
         <constructor-arg index="0" value="${host.name}" />
     </bean>
 
-	<util:map id="uniqueIdGeneratorsMap">
-		<entry
-			key="org.jasig.cas.authentication.principal.SimpleWebApplicationServiceImpl"
-			value-ref="serviceTicketUniqueIdGenerator" />
+    <util:map id="uniqueIdGeneratorsMap">
+        <entry
+            key="org.jasig.cas.authentication.principal.SimpleWebApplicationServiceImpl"
+            value-ref="serviceTicketUniqueIdGenerator" />
         <entry
             key="org.jasig.cas.support.saml.authentication.principal.SamlService"
             value-ref="samlServiceTicketUniqueIdGenerator" />
-	</util:map>
+    </util:map>
 
 </beans>

@@ -30,8 +30,8 @@
     <description>
     	Configuration for the default TicketRegistry which stores the tickets in-memory and cleans them out as specified intervals.
     </description>
-       
-  <!-- Ticket Registry 
+
+  <!-- Ticket Registry
   <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry" />
   -->
   <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.JpaTicketRegistry" />
@@ -63,19 +63,19 @@
         <!-- Note!!
         my.cnf lower-case-table-names = 1
         -->
- 
+
       </props>
     </property>
   </bean>
- 
+
   <bean id="transactionManager"
     class="org.springframework.orm.jpa.JpaTransactionManager"
     p:entityManagerFactory-ref="entityManagerFactory" />
- 
+
   <tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<!--Quartz -->
-	<!-- TICKET REGISTRY CLEANER 
+	<!-- TICKET REGISTRY CLEANER
 	<bean id="ticketRegistryCleaner" class="org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner"
 		p:ticketRegistry-ref="ticketRegistry"
 		p:logoutManager-ref="logoutManager" />
@@ -95,7 +95,7 @@
     p:ticketRegistry-ref="ticketRegistry"
     p:logoutManager-ref="logoutManager"
     p:lock-ref="cleanerLock" />
- 
+
   <!--
    Use JpaLockingStrategy for 3.4.11 and later.
    This bean is only needed for HA setups where multiple nodes are attempting
@@ -113,7 +113,7 @@
     class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
     p:targetObject-ref="ticketRegistryCleaner"
     p:targetMethod="clean" />
- 
+
   <bean id="periodicTicketRegistryCleanerTrigger"
     class="org.springframework.scheduling.quartz.SimpleTriggerBean"
     p:jobDetail-ref="ticketRegistryCleanerJobDetail"

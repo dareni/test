@@ -4,7 +4,7 @@
 	<filter>
 		<filter-name>CAS Authentication Filter</filter-name>
 		<filter-class>org.jasig.cas.client.authentication.Saml11AuthenticationFilter</filter-class>
-		<!-- 
+		<!--
         <filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
         -->
 		<init-param>
@@ -20,8 +20,8 @@
 
 	<filter>
 		<filter-name>CAS Validation Filter</filter-name>
-		<filter-class>org.jasig.cas.client.validation.Saml11TicketValidationFilter</filter-class> 
-		<!-- 
+		<filter-class>org.jasig.cas.client.validation.Saml11TicketValidationFilter</filter-class>
+		<!--
         <filter-class>org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter</filter-class>
         -->	
 		<init-param>
